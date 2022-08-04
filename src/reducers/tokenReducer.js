@@ -1,4 +1,4 @@
-import nanoid from "nanoid";
+import {nanoid} from "nanoid";
 
 import {
   RECEIVE_ACCESS_TOKEN,
@@ -30,8 +30,8 @@ const tokenReducer = (reduxState = defaultState, { type, payload }) => {
       return {
         ...reduxState,
         // no need to redefine if it exists in the state already
-        state: reduxState.state || nanoid(32),
-        nonce: reduxState.nonce || nanoid(32)
+        state: reduxState.state || nanoid(),
+        nonce: reduxState.nonce || nanoid()
       }
     case CLEAR_ALL:
       return defaultState;

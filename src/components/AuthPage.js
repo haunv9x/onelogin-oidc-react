@@ -20,14 +20,16 @@ const AuthPage = ({
   if (isEmpty(profile)) {
     const hash = location.hash;
     const response = parse(hash);
-    if (response.error) {
-      alert(response.error_description);
-      return <Redirect to="/home" />
-    } else {
-      receiveTokens(response.access_token, response.idToken);
-      receiveProfile(jwtDecode(response.id_token));
-    }
-    // Render loader
+    console.log(response, 'responseresponse');
+    console.log(response.access_token, 'access_token');
+    // if (response.error) {
+    //   alert(response.error_description);
+    //   return <Redirect to="/home" />
+    // } else {
+    //   receiveTokens(response.access_token, response.idToken);
+    //   receiveProfile(jwtDecode(response.id_token));
+    // }
+    // // Render loader
     return <Loader />;
   } else {
     return <Redirect to="/profile" />

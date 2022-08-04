@@ -8,9 +8,11 @@ import { generateStateAndNonce } from "../actions/tokenActions";
 import "../css/LoginPage.css";
 
 const LoginPage = ({ state, nonce, generateParams }) => {
+  console.log(state, nonce, generateParams ,'vstate, nonce, generateParams ')
   if (state === null || nonce === null) {
     generateParams();
   } else {
+    console.log('state, nonce, generateParams: ', state, nonce);
     oidcApi.beginAuth({ state, nonce });
   }
 
